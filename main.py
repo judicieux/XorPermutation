@@ -22,30 +22,5 @@ def decrypt():
 			print(chr(ord(a) ^ ord(b)), end='')
 		print("\n")
 
-def encrypt1():
-	text = input("Text: ")
-	key = input("Key: ")
-	n = len(text)
-
-	cipher = ""
-	for i in range(n):
-		t = text[i]
-		k = key[i % len(key)]
-		x = ord(k) ^ ord(t)
-		cipher += chr(x)
-	
-	print(cipher.encode("utf-8").hex())
-
-def decrypt2():
-	key = "fel"
-	text = input("Text: ")
-	text = bytearray.fromhex(text).decode()
-	n = len(text)
-	for a in range(n):
-		clear = ""
-		for b in range(n):
-			k = key[a]
-			t = text[b]
-			x = ord(k) ^ ord(t)
-			clear += chr(x)
-		print("{}".format(clear))
+encrypt()
+decrypt()
